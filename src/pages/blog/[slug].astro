@@ -6,8 +6,6 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
-import MarkdownRenderer from '../../components/MarkdownRenderer.svelte';
-
 const { slug } = Astro.params;
 
 const raw = fs.readFileSync(`src/content/blog/${slug}.md`, 'utf-8');
@@ -22,4 +20,3 @@ const file = await unified()
 const htmlContent = file.toString();
 ---
 
-<MarkdownRenderer content={htmlContent} />
